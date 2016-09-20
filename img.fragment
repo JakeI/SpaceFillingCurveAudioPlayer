@@ -1,0 +1,21 @@
+#version 330 core
+
+layout(location=0) out vec4 col;
+
+uniform sampler2D t;
+
+in vec2 uv;
+in vec4 mousePosF;
+in vec4 p;
+
+void main(void)
+{
+    float factor = length(p-mousePosF);
+    vec3 c = texture2D(t, uv).rgb;
+    vec3 ligthC = clamp((0.3/(factor))*c, 0.0, 1.0);
+    vec3 ct = 0.8f*c+0.4f*ligthC;
+
+    ct = mix(1.5f*ct, ct, smoothstep(0.01, 0.02, factor));
+
+    col = vec4(ct, 1.0f);
+}

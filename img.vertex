@@ -1,0 +1,20 @@
+#version 330 core
+
+layout(location=0) in vec4 pos;
+layout(location=1) in vec2 UV;
+
+uniform mat4 matrix;
+uniform mat4 proj;
+uniform vec4 mousePos;
+
+out vec2 uv;
+out vec4 mousePosF;
+out vec4 p;
+
+void main(void)
+{
+    p = pos;
+    gl_Position = matrix * pos;
+    uv = UV;
+    mousePosF = mousePos;
+}
