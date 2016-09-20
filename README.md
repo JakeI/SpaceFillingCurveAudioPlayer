@@ -5,3 +5,6 @@ This is a work in (*slow*) progress. Right know all I can do is display the imag
 
 # Installation
 This uses Qt and Qt only. It shoud run fine in Qt creator.
+
+# Screenshots
+There isn't mutch to show yet and Images are a terible way of demonstrade an audio generator but I uploded one anyway: ![My main Screen](ScreenShot.PNG)
